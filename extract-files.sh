@@ -17,7 +17,7 @@
 
 set -e
 
-DEVICE=bismuth
+DEVICE=v7101o
 VENDOR=teracube
 
 # Load extract_utils and do some sanity checks
@@ -74,7 +74,5 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
 COMMON_BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary"
-
-sed -i 's/libicuuc\.so/libicuXD.so/g' "${COMMON_BLOB_ROOT}/bin/nfcstackp" "${COMMON_BLOB_ROOT}/lib/libstnfc_nci_jni.so" "${COMMON_BLOB_ROOT}/lib64/libstnfc_nci_jni.so"
 
 "${MY_DIR}/setup-makefiles.sh" 
